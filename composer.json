@@ -21,13 +21,13 @@
     ],
     "require": {
         "php": ">=5.4",
-        "zf-commons/zfc-user": "0.*",
+        "zf-commons/zfc-user": "1.*",
         "doctrine/doctrine-mongo-odm-module": "0.10.*"
     },
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "0.2.x-dev"
         }
     },
     "autoload": {
