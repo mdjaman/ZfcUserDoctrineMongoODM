@@ -1,5 +1,5 @@
 {
-    "name": "zf-commons/zfc-user-doctrine-mongo-odm",
+    "name": "mdjaman/zfc-user-doctrine-mongo-odm",
     "description": "Doctrine2 Mongo storage adapter for ZfcUser.",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -20,9 +20,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.4",
         "zf-commons/zfc-user": "0.*",
-        "doctrine/doctrine-mongo-odm-module": "~0.9.1"
+        "doctrine/doctrine-mongo-odm-module": "0.10.*"
     },
     "minimum-stability": "dev",
     "extra": {

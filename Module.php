@@ -7,6 +7,9 @@ use ZfcUser\Module as ZfcUser;
 
 class Module
 {
+    /**
+     * @param $e
+     */
     public function onBootstrap($e)
     {
         $app     = $e->getParam('application');
@@ -20,6 +23,9 @@ class Module
         }
     }
 
+    /**
+     * @return array
+     */
     public function getAutoloaderConfig()
     {
         return array(
@@ -34,28 +40,9 @@ class Module
         );
     }
 
-    public function getServiceConfig()
-    {
-        return array(
-            'aliases' => array(
-                'zfcuser_doctrine_dm' => 'doctrine.documentmanager.odm_default',
-
-            ),
-            'factories' => array(
-                'zfcuser_module_options' => function ($sm) {
-                    $config = $sm->get('Config');
-                    return new Options\ModuleOptions(isset($config['zfcuser']) ? $config['zfcuser'] : array());
-                },
-                'zfcuser_user_mapper' => function ($sm) {
-                    return new \ZfcUserDoctrineMongoODM\Mapper\UserMongoDB(
-                        $sm->get('zfcuser_doctrine_dm'),
-                        $sm->get('zfcuser_module_options')
-                    );
-                },
-            ),
-        );
-    }
-
+    /**
+     * @return mixed
+     */
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
